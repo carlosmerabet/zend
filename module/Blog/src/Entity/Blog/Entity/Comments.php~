@@ -1,0 +1,39 @@
+<?php
+
+namespace Blog\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Comments
+ *
+ * @ORM\Table(name="comments")
+ * @ORM\Entity
+ */
+class Comments
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="content", type="text", nullable=false)
+     */
+    private $content;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="post_id", type="integer", nullable=false)
+     */
+    private $postId;
+
+
+}

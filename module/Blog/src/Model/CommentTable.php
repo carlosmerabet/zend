@@ -1,0 +1,42 @@
+<?php
+
+namespace Blog\Model;
+
+use Zend\Db\TableGateway\Exception\RuntimeException;
+use Zend\Db\TableGateway\TableGatewayInterface;
+
+
+class CommentTable
+{
+    #/*
+    private $tableGateway;
+
+    public function __construct(TableGatewayInterface $tableGateway)
+    {
+        $this->tableGateway = $tableGateway;
+    }
+
+
+    public function fetchAll($post_id)
+    {
+        return $this->tableGateway->select([
+            'post_id' => $post_id
+        ]);
+    }
+
+
+    public function saveBlog(Comment $comment)
+    {
+        #exit('das');
+        $data = [
+            'content' => $comment->content,
+            'post_id'  => $comment->post_id,
+        ];
+        
+        $this->tableGateway->insert($data);
+        return;
+
+    }
+
+
+}
